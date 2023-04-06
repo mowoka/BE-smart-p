@@ -1,10 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { ApiResponseType } from "./api.response";
+import { ApiResponseType } from "@core/types";
+import { Token } from "./token";
 
-export class Token {
-    @ApiProperty()
-    token: string;
-}
 
 export class RegisterReponseTypes extends ApiResponseType {
     @ApiProperty({ type: Token })

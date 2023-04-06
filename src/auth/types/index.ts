@@ -1,4 +1,3 @@
 export * from './register.response.type';
-export * from './api.response';
-export * from './register.response.type';
-export * from './bad.request.response';
+export * from './login.response.type';
+export * from './token';

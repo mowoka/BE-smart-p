@@ -2,9 +2,10 @@ import { Body, Controller, Post } from '@nestjs/common';
 import { ApiCreatedResponse, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { AuthService } from './auth.service';
 import { LoginDto, RegisterDto } from './dto';
-import { BadRequestResponse, RegisterReponseTypes } from './types';
+import { RegisterReponseTypes } from './types';
 import { LoginReponseTypes } from './types/login.response.type';
-import { ErrorServerResponse } from './types/error.server.response';
+import { ErrorServerResponse } from 'src/core/types/error.server.response';
+import { BadRequestResponse } from '@core/types';
 
 
 @ApiTags('Auth')

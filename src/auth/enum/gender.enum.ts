@@ -1,4 +1,4 @@
 export enum Gender {
-    pria = 'Pria',
-    wanita = 'Wanita',
+    pria = 'pria',
+    wanita = 'wanita',
 }

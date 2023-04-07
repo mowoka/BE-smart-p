@@ -39,10 +39,10 @@ export class AuthService {
                 };
             }
 
-            const token = this.generateToken(user.id, user.nik, user.email);
+            const token = await this.generateToken(user.id, user.nik, user.email);
 
             return {
-                statusCode: 200,
+                statusCode: 201,
                 message: 'Login success',
                 status: true,
                 data: token,

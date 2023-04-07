@@ -14,6 +14,7 @@ async function bootstrap() {
     .setTitle('NestJS SMART-P API')
     .setDescription('End Point for SMART-P API Application')
     .setVersion('1.0')
+    .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('doc', app, document);

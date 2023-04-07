@@ -20,7 +20,9 @@
     "paths": {
       "@*": ["src/*"],
       "@core":["src/core/*"],
-      "@auth": ["src/auth"],
+      "@auth": ["src/auth/*"],
+      "@prisma": ["src/prisma/*"],
+      "@user":["src/user/*"],
     }
   }
 }

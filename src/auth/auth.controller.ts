@@ -14,7 +14,7 @@ export class AuthController {
     constructor(private authService: AuthService) { }
 
     @Post('login')
-    @ApiCreatedResponse({ status: 201, description: 'Create user Successfull', type: LoginReponseTypes })
+    @ApiCreatedResponse({ status: 201, description: 'Login Successfull', type: LoginReponseTypes })
     @ApiResponse({ status: 400, description: 'Bad Request', type: BadRequestResponse, schema: { example: { statusCode: 400, message: ['Credential Incorrect'], error: "Bad Request", } } })
     @ApiResponse({ status: 500, description: 'Internal Server Error', type: ErrorServerResponse, schema: { example: { statusCode: 500, message: 'Internal Server Error', status: false } } })
     login(@Body() dto: LoginDto) {

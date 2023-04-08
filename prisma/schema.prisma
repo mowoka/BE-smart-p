@@ -25,4 +25,51 @@ model User {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  user_id          RequestAgenda[] @relation("user_id")
+  user_ketua_rw_id RequestAgenda[] @relation("user_ketua_rw_id")
+}
+
+model Category {
+  id   Int    @id @default(autoincrement())
+  name String
+
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  RequestAgenda RequestAgenda[]
+}
+
+model Priority {
+  id          Int    @id @default(autoincrement())
+  priority    Int
+  description String
+
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  RequestAgenda RequestAgenda[]
+}
+
+model RequestAgenda {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  tgl_request DateTime
+  start_time  String
+  end_time    String
+  keterangan  String
+  catatan     String
+  status      String
+
+  user_id Int
+  user    User @relation("user_id", fields: [user_id], references: [id])
+
+  user_ketua_rw_id Int
+  user_ketua_rw    User @relation("user_ketua_rw_id", fields: [user_ketua_rw_id], references: [id])
+
+  category_id Int
+  category    Category @relation(fields: [category_id], references: [id])
+
+  priority_id Int
+  priotiry    Priority @relation(fields: [priority_id], references: [id])
 }

@@ -4,7 +4,7 @@ import { IsNotEmpty, IsString } from "class-validator";
 export class LoginDto {
     @IsString()
     @IsNotEmpty()
-    @ApiProperty({ example: '000000xxxxx000xx' })
+    @ApiProperty({ example: '0012002010020012' })
     nik: string;
 
     @IsString()

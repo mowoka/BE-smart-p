@@ -4,8 +4,7 @@ import { AuthService } from './auth.service';
 import { LoginDto, RegisterDto } from './dto';
 import { RegisterReponseTypes } from './types';
 import { LoginReponseTypes } from './types/login.response.type';
-import { ErrorServerResponse } from 'src/core/types/error.server.response';
-import { BadRequestResponse } from '@core/types';
+import { BadRequestResponse, ErrorServerResponse } from '@core/types';
 
 
 @ApiTags('Auth')

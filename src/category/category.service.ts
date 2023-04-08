@@ -11,7 +11,7 @@ export class CategoryService {
             const categories = await this.prisma.category.findMany({})
 
             return {
-                statusCode: 201,
+                statusCode: 200,
                 message: 'Get Categories Successfull',
                 status: true,
                 data: categories,

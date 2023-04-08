@@ -14,7 +14,7 @@ export class CategoryController {
     constructor(private categoryServ: CategoryService) { }
 
     @Get()
-    @ApiCreatedResponse({ status: 201, description: 'Get Categories Successfull', type: CategoriesResponseType })
+    @ApiResponse({ status: 200, description: 'Get Categories Successfull', type: CategoriesResponseType })
     getCategory() {
         return this.categoryServ.getCategories();
     }

@@ -7,6 +7,7 @@ import { ConfigModule } from '@nestjs/config';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
 import { CategoryModule } from './category/category.module';
+import { PriorityModule } from './priority/priority.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { CategoryModule } from './category/category.module';
     CoreModule,
     UserModule,
     CategoryModule,
+    PriorityModule,
   ],
   controllers: [AppController],
   providers: [AppService],

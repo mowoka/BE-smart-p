@@ -28,6 +28,9 @@ model User {
 
   user_id          RequestAgenda[] @relation("user_id")
   user_ketua_rw_id RequestAgenda[] @relation("user_ketua_rw_id")
+
+  agenda_user_id          Agenda[] @relation("agenda_user_id")
+  agenda_user_ketua_rw_id Agenda[] @relation("agenda_user_ketua_rw_id")
 }
 
 model Category {
@@ -38,6 +41,7 @@ model Category {
   createdAt     DateTime        @default(now())
   updatedAt     DateTime        @updatedAt
   RequestAgenda RequestAgenda[]
+  Agenda        Agenda[]
 }
 
 model Priority {
@@ -48,6 +52,7 @@ model Priority {
   createdAt     DateTime        @default(now())
   updatedAt     DateTime        @updatedAt
   RequestAgenda RequestAgenda[]
+  Agenda        Agenda[]
 }
 
 model RequestAgenda {
@@ -67,6 +72,28 @@ model RequestAgenda {
 
   user_ketua_rw_id Int
   user_ketua_rw    User @relation("user_ketua_rw_id", fields: [user_ketua_rw_id], references: [id])
+
+  category_id Int
+  category    Category @relation(fields: [category_id], references: [id])
+
+  priority_id Int
+  priotiry    Priority @relation(fields: [priority_id], references: [id])
+}
+
+model Agenda {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  agenda_user_id Int
+  user           User @relation("agenda_user_id", fields: [agenda_user_id], references: [id])
+
+  agenda_user_ketua_rw_id Int
+  user_ketua_rw           User     @relation("agenda_user_ketua_rw_id", fields: [agenda_user_ketua_rw_id], references: [id])
+  tgl_request             DateTime
+  start_time              String
+  end_time                String
+  keterangan              String
 
   category_id Int
   category    Category @relation(fields: [category_id], references: [id])
